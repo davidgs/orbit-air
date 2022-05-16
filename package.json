@@ -1,6 +1,6 @@
 {
-  "name": "OrbitAirtable",
-  "description": "An App for moving Data from one place to another",
+  "name": "@marketing-link-builder/1.0.3",
+  "description": "An App for creating tracking links for marketing campaigns",
   "scripts": {
     "build": "concurrently \"npm run build:main\" \"npm run build:renderer\"",
     "build:main": "cross-env NODE_ENV=production TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.main.prod.ts",
@@ -13,7 +13,8 @@
     "start:main": "cross-env NODE_ENV=development electron -r ts-node/register/transpile-only ./src/main/main.ts",
     "start:renderer": "cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack serve --config ./.erb/configs/webpack.config.renderer.dev.ts",
     "test": "jest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "site": "react-scripts build"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -30,8 +31,8 @@
     ]
   },
   "build": {
-    "productName": "Orbit Airtable Data",
-    "appId": "com.camunda.OrbitAirtable",
+    "productName": "Tracking Link Builder",
+    "appId": "com.camunda.LinkBuilder",
     "asar": true,
     "asarUnpack": "**\\*.{node,dll}",
     "files": [
@@ -89,38 +90,26 @@
     ],
     "publish": {
       "provider": "github",
-      "owner": "electron-react-boilerplate",
-      "repo": "electron-react-boilerplate"
+      "owner": "davidgs",
+      "repo": "link-builder"
     }
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electron-react-boilerplate/electron-react-boilerplate.git"
+    "url": "git+https://github.com/davidgs/link-builder.git"
   },
   "author": {
-    "name": "Electron React Boilerplate Maintainers",
-    "email": "electronreactboilerplate@gmail.com",
-    "url": "https://electron-react-boilerplate.js.org"
+    "name": "David G. Simmons, Principal Developer Advocate",
+    "email": "david.simmons@camunda.com",
+    "url": "https://sentiment.camunda.com/linker"
   },
-  "contributors": [
-    {
-      "name": "Amila Welihinda",
-      "email": "amilajack@gmail.com",
-      "url": "https://github.com/amilajack"
-    },
-    {
-      "name": "John Tran",
-      "email": "jptran318@gmail.com",
-      "url": "https://github.com/jooohhn"
-    }
-  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/electron-react-boilerplate/electron-react-boilerplate/issues"
+    "url": "https://github.com/davidgs/link-builder/issues"
   },
   "keywords": [
     "electron",
-    "boilerplate",
+    "utm_links",
     "react",
     "typescript",
     "ts",
@@ -129,7 +118,7 @@
     "hot",
     "reload"
   ],
-  "homepage": "https://github.com/electron-react-boilerplate/electron-react-boilerplate#readme",
+  "homepage": "https://github.com/davidgs/link-builder#readme",
   "jest": {
     "testURL": "http://localhost/",
     "testEnvironment": "jsdom",
@@ -181,7 +170,7 @@
     "css-minimizer-webpack-plugin": "^3.3.1",
     "detect-port": "^1.3.0",
     "electron": "^16.0.5",
-    "electron-builder": "22.13.1",
+    "electron-builder": "^23.0.2",
     "electron-devtools-installer": "^3.2.0",
     "electron-notarize": "^1.1.1",
     "electron-rebuild": "^3.2.5",
@@ -199,7 +188,7 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
-    "husky": "^7.0.4",
+    "husky": "^8.0.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.5",
     "lint-staged": "^12.1.4",
@@ -226,6 +215,8 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.8.9",
+    "@rjsf/core": "^4.2.0",
     "bootstrap": "^5.1.3",
     "electron-debug": "^3.2.0",
     "electron-log": "^4.4.6",
@@ -233,8 +224,12 @@
     "history": "^5.3.0",
     "react": "^17.0.2",
     "react-bootstrap": "^2.2.1",
+    "react-bootstrap-icons": "^1.8.2",
     "react-dom": "^17.0.2",
-    "react-router-dom": "^6.2.1"
+    "react-hook-form": "^7.31.1",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "^5.0.1",
+    "yup": "^0.32.11"
   },
   "devEngines": {
     "node": ">=14.x",

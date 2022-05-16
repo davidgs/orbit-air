@@ -1,15 +1,16 @@
-import icon from '../../assets/icon.svg';
 import './App.css';
-import { Translate } from './Translate';
+import SideNav from './SideNav';
+import MainHeader from './MainHeader';
+import LinkForm from './LinkForm';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
+    // eslint-disable-next-line react/jsx-filename-extension
     <div className="App">
-    <img src={icon} className="App-logo" alt="logo" />
-      <header className="App-header">
-
-        <Translate />
-        </header>
+      <MainHeader />
+      <LinkForm />
+      <SideNav />
     </div>
   );
 }

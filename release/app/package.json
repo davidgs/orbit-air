@@ -1,12 +1,12 @@
 {
-  "name": "electron-react-boilerplate",
-  "version": "4.5.0",
-  "description": "A foundation for scalable desktop apps",
+  "name": "@marketing-link-builder/1.0.3",
+  "version": "1.0.3",
+  "description": "An App for creating tracking links for marketing campaigns",
   "main": "./dist/main/main.js",
   "author": {
-    "name": "Electron React Boilerplate Maintainers",
-    "email": "electronreactboilerplate@gmail.com",
-    "url": "https://github.com/electron-react-boilerplate"
+    "name": "David G. Simmons",
+    "email": "david.simmons@camunda.com",
+    "url": "https://github.com/davidgs/link-maker"
   },
   "scripts": {
     "electron-rebuild": "node -r ts-node/register ../../.erb/scripts/electron-rebuild.js",
